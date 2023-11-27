@@ -1,0 +1,19 @@
+<!-- dialog.wxml -->
+<navigation-bar title="" back="{{true}}" color="black" background="transparent"></navigation-bar>
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="btl_r32 btr_r32 wp_100 bg_white b_0 p_ab h_a d_f fd_c" style="min-height: 1388rpx">
+    <view class="d_f fd_c p_48 gap_48 jc_sb fg_1">
+      <view class="d_f fd_c gap_24 jc_c">
+        <view class="w_a d_f jc_c">功能标题</view>
+        <view class="font_28 fc_l3 d_f jc_c">功能副标题功能副标题功能副标题</view>
+      </view>
+      <view class="d_f fd_c gap_24 mb_32">
+        <view class="d_f gap_24">
+          <van-field value="{{ value }}" placeholder="请输入用户名" bind:change="onChange" class="fg_1" />
+          <van-button round type="primary" color="#1989FA">卜爻</van-button>
+        </view>
+        <view class="font_28 d_f jc_c fc_brand">查看历史</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

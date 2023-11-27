@@ -1,0 +1,97 @@
+/**app.wxss**/
+/* 引入colorset */
+@import "/colorset.wxss";
+
+/* 通用样式文件 */
+/* margin相关 */
+.mb_32 {
+  margin-bottom: 32rpx;
+}
+/* padding相关 */
+.p_48 {
+  padding: 48rpx;
+}
+/* width/height */
+.wp_100 {
+  width: 100%;
+}
+.wp_80 {
+  width: 80%;
+}
+.hp_100 {
+  height: 100%;
+}
+.w_a {
+  width: auto;
+}
+.h_a {
+  height: auto;
+}
+/* 布局相关 */
+.p_ab {
+  position: absolute;
+}
+.b_0 {
+  bottom: 0rpx;
+}
+/* display相关 */
+.d_f {
+  display: flex;
+}
+
+/* flex相关 */
+.fd_c {
+  flex-direction: column;
+}
+.ai_c {
+  align-items: center;
+}
+.jc_c {
+  justify-content: center;
+}
+.jc_sb {
+  justify-content: space-between;
+}
+.fg_1 {
+  flex-grow: 1;
+}
+.gap_24 {
+  gap:24rpx;
+}
+.gap_48 {
+  gap:48rpx;
+}
+/* border相关 */
+.b_r8 {
+  border-radius: 8rpx;
+}
+.btl_r32 {
+  border-top-left-radius: 32rpx;
+}
+.btr_r32 {
+  border-top-right-radius: 32rpx;
+}
+/* 通用font */
+.font_32 {
+  font-size: 32rpx;
+}
+.font_28 {
+  font-size: 28rpx;
+}
+.font_24 {
+  font-size: 24rpx;
+}
+.fc_l3 {
+  color: var(--color-text-3)
+}
+.fc_brand {
+  color: var(--brand-1-6)
+}
+
+/* background相关 */
+.bg_white {
+  background-color: var(--color-fill-1);
+}
+.bg_f3 {
+  background-color: var(--color-fill-3);
+}

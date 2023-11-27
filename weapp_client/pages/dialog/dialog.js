@@ -1,0 +1,2 @@
+// dialog.js
+Page({})
