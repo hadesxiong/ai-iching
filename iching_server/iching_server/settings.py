@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'iching_main'
 ]
 
 MIDDLEWARE = [
@@ -75,11 +76,36 @@ WSGI_APPLICATION = 'iching_server.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'AI_ICHING',
+        'USER': 'postgres',
+        'PASSWORD': 'Faurecia614',
+        'HOST': '10.162.165.155',
+        'PORT': 11003,
+        'OPTIONS' : {
+            'options': '-c search_path=main_server'
+        }
+    },
+    'iching_db': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'AI_ICHING',
+        'USER': 'postgres',
+        'PASSWORD': 'Faurecia614',
+        'HOST': '10.162.165.155',
+        'PORT': 11003,
+        'OPTIONS' : {
+            'options': '-c search_path=main_server'
+        }
     }
 }
 
+# 路由映射
+DATABASES_APPS_MAPPING = {
+    'iching_db': 'iching_db'
+}
+
+# 插入数据库路由
+DATABASE_ROUTERS = ['iching_server.routers.DatabaseAppRouter']
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

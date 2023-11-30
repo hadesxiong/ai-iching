@@ -9,3 +9,9 @@ page {
   flex: 1;
   overflow-y: hidden;
 }
+.bg_white {
+  background-color: #ffffff; 
+}
+.bg_f3 {
+  background-color: #e5e6eb;
+}
