@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.postgres',
     'iching_main'
 ]
 
@@ -101,7 +102,7 @@ DATABASES = {
 
 # 路由映射
 DATABASES_APPS_MAPPING = {
-    'iching_db': 'iching_db'
+    'iching_main': 'iching_db'
 }
 
 # 插入数据库路由
