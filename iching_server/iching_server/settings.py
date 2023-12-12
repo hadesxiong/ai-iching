@@ -9,8 +9,12 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+# 读取环境配置
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -38,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.postgres',
-    'iching_main'
+    'iching_main',
+    'django_crontab'
 ]
 
 MIDDLEWARE = [
@@ -80,9 +85,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'AI_ICHING',
         'USER': 'postgres',
-        'PASSWORD': 'Faurecia614',
-        'HOST': '10.162.165.155',
-        'PORT': 11003,
+        'PASSWORD': os.getenv('POSTGRES_PW'),
+        'HOST': os.getenv('POSTGRES_HOST'),
+        'PORT': os.getenv('POSTGRES_PORT'),
         'OPTIONS' : {
             'options': '-c search_path=main_server'
         }
@@ -91,9 +96,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'AI_ICHING',
         'USER': 'postgres',
-        'PASSWORD': 'Faurecia614',
-        'HOST': '10.162.165.155',
-        'PORT': 11003,
+        'PASSWORD': os.getenv('POSTGRES_PW'),
+        'HOST': os.getenv('POSTGRES_HOST'),
+        'PORT': os.getenv('POSTGRES_PORT'),
         'OPTIONS' : {
             'options': '-c search_path=main_server'
         }
@@ -148,3 +153,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# django_crontab任务配置
+CRONJOBS = [
+    ('*/1 * * * *','iching_main.utils.getBaiduToken.updateBaiduToken',' >> ./cron.log')
+]
