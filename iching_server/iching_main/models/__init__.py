@@ -11,3 +11,4 @@ from .gua.guaRecord import *
 
 # common内容
 from .common.wenxinAccess import *
+from .common.wechatAccess import *
