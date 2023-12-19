@@ -4,8 +4,11 @@ from django.urls import path
 from iching_main import views
 
 urlpatterns = [
-    
-    #gua
-    path('api/liuyao/getGuaRes',views.getGuaRes)
+    # user
+    path('api/user/userLogin',views.userLogin),
 
+    #gua
+    path('api/liuyao/getGuaRes',views.getGuaRes),
+    path('api/liuyao/getLiuYaoRes',views.getLiuYaoRes),
+    path('api/liuyao/getGuaRec',views.getGuaRec)
 ]

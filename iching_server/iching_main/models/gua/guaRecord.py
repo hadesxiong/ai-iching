@@ -11,6 +11,9 @@ class guaRecord(models.Model):
     user_ques = models.CharField(max_length=None,help_text='问题')
     ai_answer = models.CharField(max_length=None,help_text='解语')
     rec_dt = models.DateTimeField(auto_now=False,auto_now_add=False,help_text='创建时间')
+    total_tokens = models.IntegerField(default=0,help_text='token合计')
+    prompt_tokens = models.IntegerField(default=0,help_text='参数token')
+    completion_tokens = models.IntegerField(default=0,help_text='完善token')
 
     class Meta:
 

@@ -2,5 +2,5 @@
 
 from .getGuaRelated import *
 from .getBaiduToken import *
-from .getWeappToken import *
+from .getWeChatToken import *
 from .customPermissions import *

@@ -8,7 +8,9 @@ class NormalUserPermission(BasePermission):
 
     # 查询逻辑：用户是否已经注册，如果不注册则不展示
     def has_permission(self,request,view):
-        openid = request.headers.get('user_id')
+        print(request.headers)
+        openid = request.headers.get('Userid')
+        print(openid)
         # 待补充解密逻辑
         
         if openid:
@@ -24,13 +26,13 @@ class UsagePermission(BasePermission):
 
     # 查询逻辑：用户是否在当日还剩余使用次数
     def has_Permission(self,request,view):
-        openid = request.headers.get('user_id')
+        openid = request.headers.get('Userid')
         # 待补充解密逻辑
 
         if openid:
             try:
                 today_usage = guaRecord.objects.filter(openid=openid)
-                if len(today_usage) >=2:
+                if len(today_usage) >=10:
                     return False
                 else:
                     return True
