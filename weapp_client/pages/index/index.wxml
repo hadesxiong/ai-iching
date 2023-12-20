@@ -4,8 +4,8 @@
   <view class="btl_r32 btr_r32 wp_100 bg_white b_0 p_ab" style="min-height: 1156rpx">
     <view class="d_f fd_c p_48 gap_48">
       <view class="d_f fd_c gap_24">
-        <view>功能标题</view>
-        <view class="font_28 fc_l3">功能副标题功能副标题功能副标题</view>
+        <view class="title">千帆卜爻</view>
+        <view class="font_28 fc_l3">遇事不决，先卜一卦，人工智能帮你在线预测</view>
       </view>
       <view class="wp_100 bg_f3 b_r8" style="height:200rpx" bind:tap="toDialog"></view>
       <view class="wp_100 bg_f3 b_r8" style="height:200rpx" bind:tap="toDialog"></view>

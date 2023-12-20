@@ -6,6 +6,7 @@ from iching_main import views
 urlpatterns = [
     # user
     path('api/user/userLogin',views.userLogin),
+    path('api/user/userUpdate',views.userUpdate),
 
     #gua
     path('api/liuyao/getGuaRes',views.getGuaRes),

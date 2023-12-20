@@ -8,10 +8,15 @@ page {
 .scrollarea {
   flex: 1;
   overflow-y: hidden;
+  background-size: 100% auto;
 }
 .bg_white {
   background-color: #ffffff; 
 }
 .bg_f3 {
   background-color: #e5e6eb;
+}
+.title {
+  font-size: 40rpx;
+  font-weight: 500;
 }
