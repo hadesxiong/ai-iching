@@ -5,12 +5,7 @@ page {
   flex-direction: column;
   background-color: #D9D9D9;
 }
-.bg_white {
-  background-color: #ffffff; 
-}
-.bg_f3 {
-  background-color: #e5e6eb;
-}
+/* width/height */
 .wp_100 {
   width: 100%;
 }
@@ -29,44 +24,28 @@ page {
 .w_a {
   width: auto;
 }
-.b_0 {
-  bottom: 0rpx;
-}
-.pos_ab {
-  position: absolute;
-}
-.btl_r32 {
-  border-top-left-radius: 32rpx;
-}
-.btr_r32 {
-  border-top-right-radius: 32rpx;
-}
 .minh_1156 {
   min-height: 1156rpx;
 }
+.w_280 {
+  width: 200rpx;
+}
+.h_280 {
+  height: 200rpx;
+}
+.h_200 {
+  height: 200rpx;
+}
+/* display */
 .d_f {
   display: flex;
 }
 .fd_c {
   flex-direction: column;
 }
-.p_48 {
-  padding: 48rpx;
-}
-.font_40 {
-  font-size: 40rpx;
-}
-.font_28 {
-  font-size: 28rpx;
-}
-.br_16 {
-  border-radius: 16rpx;
-}
-.fc_l3 {
-  color: #86909c;
-}
-.fc_l6 {
-  color: #ffffff;
+/* margin/padding/position */
+.pos_ab {
+  position: absolute;
 }
 .mb_48 {
   margin-bottom: 48rpx;
@@ -74,8 +53,49 @@ page {
 .mb_24 {
   margin-bottom: 24rpx;
 }
-.h_200 {
-  height: 200rpx;
+.mb_16 {
+  margin-bottom: 16rpx;
+}
+.p_48 {
+  padding: 48rpx;
+}
+.ptpb_48 {
+  padding-top: 48rpx;
+  padding-bottom: 48rpx;
+}
+.plpr_64 {
+  padding-left: 64rpx;
+  padding-right: 64rpx;
+}
+.b_0 {
+  bottom: 0rpx;
+}
+.r_20 {
+  right: 20rpx;
+}
+/* font */
+.font_40 {
+  font-size: 40rpx;
+}
+.font_28 {
+  font-size: 28rpx;
+}
+.fw_500 {
+  font-weight: 500;
+  
+}
+.fc_l3 {
+  color: #86909c;
+}
+.fc_l6 {
+  color: #ffffff;
+}
+/* background */
+.bg_white {
+  background-color: #ffffff; 
+}
+.bg_f3 {
+  background-color: #e5e6eb;
 }
 .bg_blue {
   background-color: #03A4FF;
@@ -89,23 +109,13 @@ page {
   background-color: #5374A5;
   box-shadow: 0px 10px 20px 0px rgba(3, 164, 255, 0.20);
 }
-.ptpb_48 {
-  padding-top: 48rpx;
-  padding-bottom: 48rpx;
+/* border */
+.btl_r32 {
+  border-top-left-radius: 32rpx;
 }
-.plpr_64 {
-  padding-left: 64rpx;
-  padding-right: 64rpx;
+.btr_r32 {
+  border-top-right-radius: 32rpx;
 }
-.mb_16 {
-  margin-bottom: 16rpx;
-}
-.w_280 {
-  width: 200rpx;
-}
-.h_280 {
-  height: 200rpx;
-}
-.r_20 {
-  right: 20rpx;
+.br_16 {
+  border-radius: 16rpx;
 }
