@@ -1,11 +1,11 @@
 <!--index.wxml-->
 <view class='wp_100 hp_100'>
   <image class='wp_100 h_750' src="/src/img/bak.png" mode="aspectFill"/>
-  <scroll-view class='d_f fd_c bg_white w_750 minh_1156 pos_ab b_0 btl_r32 btr_r32'>
-    <view class="p_48">
+  <scroll-view type="list" class='d_f fd_c bg_white wp_100 minh_1156 pos_ab b_0 btl_r32 btr_r32'enable-flex>
+    <view class="p_48 pos_ab zi_1">
       <view class='font_40 mb_24 fw_500'>千帆卜爻</view>
       <view class="font_28 fc_l3 mb_48">遇事不决，先卜一卦，人工智能帮你在线预测</view>
-      <view class="w_a h_a bg_blue br_16 mb_48 d_f fd_c ptpb_48 plpr_64">
+      <view class="w_a h_a bg_blue br_16 mb_48 d_f fd_c ptpb_48 plpr_64" bind:tap="click_liuyao">
         <image class='pos_ab w_280 h_280 r_20'src="/src/icon/icon_1.png" mode="scaleToFit"/>
         <view class='font_40 fc_l6 mb_16 fw_500'>六爻卜卦</view>
         <view class="font_28 fc_l6">6枚硬币问吉凶（娱乐向）</view>
@@ -21,5 +21,13 @@
         <view class="font_28 fc_l6">四柱推命排大运（娱乐向）</view>
       </view>
     </view>
+    <!-- <van-transition show="{{ need_show }}" name="fade-up">
+      <view class="bg_white pos_ab b_0 w_750 minh_1456 btl_r32 btr_r32 d_f fd_c jc_sb zi_2">
+        <view class="p_48 wp_100 d_f fd_c ai_c">
+          <view class="font_40 fw_500 mb_24">六爻卜卦</view>
+          <view class="font_28 fc_l3">投掷六枚硬币，通过硬币正反排出两卦，再用卦象进行推预测。</view>
+        </view>
+      </view>
+    </van-transition> -->
   </scroll-view>
 </view>

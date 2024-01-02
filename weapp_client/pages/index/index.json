@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "van-transition": "@vant/weapp/transition/index"
+  },
+  "styleIsolation": "apply-shared"
 }
