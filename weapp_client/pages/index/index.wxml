@@ -1,33 +1,44 @@
 <!--index.wxml-->
+<page-meta page-style="{{ lym_visible ? 'overflow: hidden;' : '' }}" />
 <view class='wp_100 hp_100'>
   <image class='wp_100 h_750' src="/src/img/bak.png" mode="aspectFill"/>
-  <scroll-view type="list" class='d_f fd_c bg_white wp_100 minh_1156 pos_ab b_0 btl_r32 btr_r32'enable-flex>
-    <view class="p_48 pos_ab zi_1">
-      <view class='font_40 mb_24 fw_500'>千帆卜爻</view>
-      <view class="font_28 fc_l3 mb_48">遇事不决，先卜一卦，人工智能帮你在线预测</view>
-      <view class="w_a h_a bg_blue br_16 mb_48 d_f fd_c ptpb_48 plpr_64" bind:tap="click_liuyao">
-        <image class='pos_ab w_280 h_280 r_20'src="/src/icon/icon_1.png" mode="scaleToFit"/>
+  <view class='d_f fd_c bg_white wp_100 minh_1156 pos_ab b_0 btl_r32 btr_r32'enable-flex>
+    <view class="ptpb_48 wp_100 pos_ab zi_1">
+      <view class='plpr_48 font_40 mb_24 fw_500'>千帆卜爻</view>
+      <view class="plpr_48 font_28 fc_l3 mb_48">遇事不决，先卜一卦，人工智能帮你在线预测</view>
+      <view class="mlmr_48 w_a h_a bg_blue br_16 mb_48 d_f fd_c ptpb_48 plpr_64" bind:tap="showLym">
+        <image class='pos_ab w_280 h_280 r_80'src="/src/icon/icon_1.png" mode="scaleToFit"/>
         <view class='font_40 fc_l6 mb_16 fw_500'>六爻卜卦</view>
         <view class="font_28 fc_l6">6枚硬币问吉凶（娱乐向）</view>
       </view>
-      <view class="w_a h_a bg_green br_16 mb_48 d_f fd_c ptpb_48 plpr_64">
-        <image class='pos_ab w_280 h_280 r_20'src="/src/icon/icon_2.png" mode="scaleToFit"/>
+      <view class="mlmr_48 w_a h_a bg_green br_16 mb_48 d_f fd_c ptpb_48 plpr_64">
+        <image class='pos_ab w_280 h_280 r_80'src="/src/icon/icon_2.png" mode="scaleToFit"/>
         <view class='font_40 fc_l6 mb_16 fw_500'>紫微斗数</view>
         <view class="font_28 fc_l6">生辰星象推运势（娱乐向）</view>
       </view>
-      <view class="w_a h_a bg_purple br_16 mb_48 d_f fd_c ptpb_48 plpr_64">
-        <image class='pos_ab w_280 h_280 r_20'src="/src/icon/icon_3.png" mode="scaleToFit"/>
+      <view class="mlmr_48 w_a h_a bg_purple br_16 mb_48 d_f fd_c ptpb_48 plpr_64">
+        <image class='pos_ab w_280 h_280 r_80'src="/src/icon/icon_3.png" mode="scaleToFit"/>
         <view class='font_40 fc_l6 mb_16 fw_500'>八字推命</view>
         <view class="font_28 fc_l6">四柱推命排大运（娱乐向）</view>
       </view>
     </view>
-    <!-- <van-transition show="{{ need_show }}" name="fade-up">
-      <view class="bg_white pos_ab b_0 w_750 minh_1456 btl_r32 btr_r32 d_f fd_c jc_sb zi_2">
-        <view class="p_48 wp_100 d_f fd_c ai_c">
+    <van-popup show="{{lym_visible}}" round position="bottom" custom-style="height:75%" overlay="{{false}}">
+      <view class="bg_white pos_ab w_750 hp_100 btl_r32 btr_r32 d_f fd_c jc_sb">
+        <view class="mlmr_48 mt_48 d_f fd_c ai_c">
           <view class="font_40 fw_500 mb_24">六爻卜卦</view>
           <view class="font_28 fc_l3">投掷六枚硬币，通过硬币正反排出两卦，再用卦象进行推预测。</view>
         </view>
+        <view class="mlmr_48 mb_60 d_f ai_c fd_c gap_24">
+          <view class="d_f gap_24 wp_100">
+            <input type="text" class="b2_solid h_100 lh_100 br_16 fg_1 font_32 plpr_24" always-embed="{{true}}" bindinput="liuyaoInput" bindconfirm="liuyaoInput"></input>
+            <van-button color="#03A4FF" type="primary" custom-style="height:100rpx;border-radius:16rpx;font-size:32rpx" bind:click="liuyaoAsk">卜爻</van-button>
+          </view>
+          <view class="d_f gap_96">
+            <view class="font_32 fc_brand" bind:tap="showLym">返回上页</view>
+            <view class="font_32 fc_brand">历史记录</view>
+          </view>
+        </view>
       </view>
-    </van-transition> -->
-  </scroll-view>
+    </van-popup>
+  </view>
 </view>

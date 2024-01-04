@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "van-transition": "@vant/weapp/transition/index"
-  },
-  "styleIsolation": "apply-shared"
+    "van-transition": "@vant/weapp/transition/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-button": "@vant/weapp/button/index"
+  }
 }

@@ -24,7 +24,8 @@
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
-    }
+    },
+    "compileWorklet": true
   },
   "condition": {},
   "editorSetting": {

@@ -18,6 +18,12 @@ page {
 .w_750 {
   width: 750rpx;
 }
+.h_100 {
+  height: 100rpx;
+}
+.lh_100 {
+  line-height: 100rpx;
+}
 .h_a {
   height: auto;
 }
@@ -46,6 +52,18 @@ page {
 .d_n {
   display: none;
 }
+.gap_24 {
+  gap: 24rpx;
+}
+.gap_48 {
+  gap: 48rpx;
+}
+.gap_96 {
+  gap: 96rpx;
+}
+.fg_1 {
+  flex-grow: 1;
+}
 .fd_c {
   flex-direction: column;
 }
@@ -59,6 +77,12 @@ page {
 .pos_ab {
   position: absolute;
 }
+.mt_48 {
+  margin-top: 48rpx;
+}
+.mb_60 {
+  margin-bottom: 60rpx;
+}
 .mb_48 {
   margin-bottom: 48rpx;
 }
@@ -71,6 +95,18 @@ page {
 .p_48 {
   padding: 48rpx;
 }
+.plpr_24 {
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+}
+.plpr_48 {
+  padding-left: 48rpx;
+  padding-right: 48rpx;
+}
+.mlmr_48 {
+  margin-left: 48rpx;
+  margin-right: 48rpx;
+}
 .ptpb_48 {
   padding-top: 48rpx;
   padding-bottom: 48rpx;
@@ -82,8 +118,8 @@ page {
 .b_0 {
   bottom: 0rpx;
 }
-.r_20 {
-  right: 20rpx;
+.r_80 {
+  right: 80rpx;
 }
 .zi_1 {
   z-index: 1;
@@ -94,6 +130,9 @@ page {
 /* font */
 .font_40 {
   font-size: 40rpx;
+}
+.font_32 {
+  font-size: 32rpx;
 }
 .font_28 {
   font-size: 28rpx;
@@ -107,6 +146,9 @@ page {
 }
 .fc_l6 {
   color: #ffffff;
+}
+.fc_brand {
+  color: #03A4FF;
 }
 /* background */
 .bg_white {
@@ -136,4 +178,7 @@ page {
 }
 .br_16 {
   border-radius: 16rpx;
+}
+.b2_solid {
+  border: 2rpx solid #C9CDD4;
 }
