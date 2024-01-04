@@ -1,3 +1,7 @@
+// index.js
+// 引入相关方法
+const {getCoins} = require('../../utils/guaRelated.js');
+
 Page({
   data: {
     lym_visible: false,
@@ -17,12 +21,14 @@ Page({
   },
   liuyaoInput(e) {
     let page_obj = this;
-    console.log(e.detail.value)
+    // console.log(e.detail.value)
     this.setData({ly_input: e.detail.value});
   },
   liuyaoAsk() {
     let page_obj = this;
     console.log(page_obj.data.ly_input);
+    let coin_res = getCoins(18);
+    console.log(coin_res);
     let liuyao_q = page_obj.data.ly_input;
     if (liuyao_q.length<=0) {
       console.log('wrong question')
