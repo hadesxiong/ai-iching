@@ -42,3 +42,5 @@ def userUpdate(request):
         re_msg = {'code':1,'msg':'error params.'}
 
     return JsonResponse(re_msg,safe=False)
+
+

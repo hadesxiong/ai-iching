@@ -1,9 +1,11 @@
-import { CameraComponent } from "XrFrame/kanata/lib/index";
 // common.js
 // 封装一些通用的方法
 
+// 引入toast方法
+import Toast from '@vant/weapp/toast/toast';
+
 const requestSync = function(_url,_data,_header,_method,_callcomplete) {
-  return pro_obj = new Promise(function(resolve,reject){
+  return new Promise(function(resolve,reject){
     wx.request({
       url: _url,
       data: _data,
@@ -30,6 +32,16 @@ const requestSync = function(_url,_data,_header,_method,_callcomplete) {
   });
 }
 
+const toastFail = function(id,tip) {
+  Toast.fail({
+    message:tip,
+    forbidClick: true,
+    selector: id,
+    duration:1500
+  })
+}
+
 module.exports = {
-  requestSync: requestSync
+  requestSync: requestSync,
+  toastFail: toastFail
 }

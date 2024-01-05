@@ -36,11 +36,11 @@ page {
 .minh_1456 {
   min-height: 1256rpx;
 }
-.w_280 {
-  width: 200rpx;
+.w_180 {
+  width: 180rpx;
 }
-.h_280 {
-  height: 200rpx;
+.h_180 {
+  height: 180rpx;
 }
 .h_200 {
   height: 200rpx;
@@ -76,6 +76,9 @@ page {
 /* margin/padding/position */
 .pos_ab {
   position: absolute;
+}
+.pos_re {
+  position: relative;
 }
 .mt_48 {
   margin-top: 48rpx;
@@ -118,8 +121,14 @@ page {
 .b_0 {
   bottom: 0rpx;
 }
-.r_80 {
-  right: 80rpx;
+.b_-30 {
+  bottom: -30rpx;
+}
+.r_30 {
+  right: 30rpx;
+}
+.t_40 {
+  top: 40rpx;
 }
 .zi_1 {
   z-index: 1;

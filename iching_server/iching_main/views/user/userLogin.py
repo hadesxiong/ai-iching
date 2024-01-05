@@ -52,14 +52,15 @@ def userLogin(request):
         code_res = requests.request('GET',os.getenv('WEAPP_JSCODE_URL'),params=request_params)
 
         if 'errcode' in json.loads(code_res.text).values():
-            re_msg = {'code':1,'msg':'err code.'}
+            re_msg = {'code':2,'msg':'err code.'}
         else:
             openid = json.loads(code_res.text)['openid']
             unionid = json.loads(code_res.text)['unionid']
 
             # 判断用户是否存在
             try:
-                userWechat.objects.get(openid=openid)
+                user_wechat = userWechat.objects.get(openid=openid)
+                avatar = user_wechat.avatar.url
             except userWechat.DoesNotExist:
                 uid = str(uuid.uuid5(uuid.NAMESPACE_DNS,'bierman')).replace('-','')
                 userWechat.objects.create(
@@ -70,5 +71,8 @@ def userLogin(request):
                 )
 
             re_msg = {'code':0,'openid':openid,'unionid':unionid}
+
+            if avatar and avatar is not None:
+                re_msg['avatar'] = avatar
 
     return JsonResponse(re_msg,safe=False)

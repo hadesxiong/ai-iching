@@ -154,8 +154,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# 设置MEDIA路径
 
-# django_crontab任务配置
-CRONJOBS = [
-    ('*/1 * * * *','iching_main.utils.getBaiduToken.updateBaiduToken',' >> ./cron.log')
-]
+MEDIA_ROOT = '/home/root/images/'
+MEDIA_URL = '/userAvatar/'
