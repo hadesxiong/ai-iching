@@ -1,5 +1,6 @@
 # coding=utf8
 from rest_framework.decorators import api_view,permission_classes
+from django.core.files.storage import default_storage
 from django.http.response import JsonResponse
 
 from iching_main.models.user.userInfo import userInfo
@@ -43,4 +44,17 @@ def userUpdate(request):
 
     return JsonResponse(re_msg,safe=False)
 
+
+@api_view(['POST'])
+@permission_classes([NormalUserPermission])
+def avatarUpdate(request):
+
+    avatar_file = request.FILES.get('avatar').read()
+    openid = request.headers.get('Userid')
+
+    if avatar_file and openid:
+
+        try:
+            user_wechat = userWechat.objects.get(openid=openid)
+            avatar_path = default_storage.save
 
