@@ -46,13 +46,19 @@ def getGuaRes(request):
         first_yao = [get_yin_yang(each_res) for each_res in coin_result[0:3]]
         second_yao = [get_yin_yang(each_res) for each_res in coin_result[3:6]]
 
+        gua_info = guaInfo.objects.get(gua_name=(get_gua_xiang(first_yao) + get_gua_xiang(second_yao)))
+        print(gua_info.gua_name,gua_info.gua_desc,gua_info.gua_sentence)
+
         re_msg = {
             'code':0,
             'first_yao':first_yao,
             'second_yao':second_yao,
             'first_gua':get_gua_xiang(first_yao),
             'second_gua': get_gua_xiang(second_yao),
-            'gua_symbol': get_gua_xiang(second_yao) + get_gua_xiang(first_yao)
+            'gua_symbol': get_gua_xiang(first_yao) + get_gua_xiang(second_yao),
+            'gua_name': gua_info.gua_name,
+            'gua_desc': gua_info.gua_desc,
+            'gua_sentence': gua_info.gua_sentence
         }
 
     return JsonResponse(re_msg,safe=False)

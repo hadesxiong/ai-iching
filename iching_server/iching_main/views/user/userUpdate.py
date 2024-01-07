@@ -1,6 +1,7 @@
 # coding=utf8
 from rest_framework.decorators import api_view,permission_classes
 from django.core.files.storage import default_storage
+from django.conf import settings
 from django.http.response import JsonResponse
 
 from iching_main.models.user.userInfo import userInfo
@@ -49,12 +50,26 @@ def userUpdate(request):
 @permission_classes([NormalUserPermission])
 def avatarUpdate(request):
 
-    avatar_file = request.FILES.get('avatar').read()
+    avatar_file = request.FILES.get('avatar')
     openid = request.headers.get('Userid')
 
     if avatar_file and openid:
 
         try:
             user_wechat = userWechat.objects.get(openid=openid)
-            avatar_path = default_storage.save
+            avatar_path = default_storage.save('images/'+avatar_file.name,avatar_file)
 
+            # 构建url地址
+            avatar_url = settings.MEDIA_URL + avatar_path
+            user_wechat.avatar = avatar_path
+            user_wechat.save()
+
+            re_msg = {'code':0,'image_url':avatar_url}
+
+        except userWechat.DoesNotExist:
+            re_msg = {'code':1,'msg':'no user.'}
+
+    else:
+        re_msg = {'code':1,'msg':'no user'}
+
+    return JsonResponse(re_msg,safe=False)

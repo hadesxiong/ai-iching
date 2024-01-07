@@ -4,7 +4,7 @@
 // 引入toast方法
 import Toast from '@vant/weapp/toast/toast';
 
-const requestSync = function(_url,_data,_header,_method,_callcomplete) {
+const requestSync = function(_url,_data,_header={},_method,_callcomplete) {
   return new Promise(function(resolve,reject){
     wx.request({
       url: _url,
@@ -36,12 +36,30 @@ const toastFail = function(id,tip) {
   Toast.fail({
     message:tip,
     forbidClick: true,
+    center:true,
     selector: id,
     duration:1500
   })
 }
 
+const toastLoading = function(id,tip) {
+  Toast.loading({
+    duration:0,
+    forbidClick:true,
+    message:tip,
+    selector:id
+  })
+}
+
+const toastClear = function(id) {
+  Toast.clear({
+    selector:id
+  })
+}
+
 module.exports = {
   requestSync: requestSync,
-  toastFail: toastFail
+  toastFail: toastFail,
+  toastLoading: toastLoading,
+  toastClear: toastClear
 }

@@ -1,6 +1,9 @@
 // 该文件保留一些默认的配置项
 
 const baseUrl = 'https://server.bearman.xyz/ai_iching'
+const hostUrl = 'https://server.bearman.xyz'
+
+const aiAvatar = 'https://server.bearman.xyz/ai_iching/userAvatar/images/robots.jpeg'
 
 const gua_dict = {
   '阳阳阳': '乾',
@@ -26,6 +29,8 @@ const number_dict = {
 
 module.exports = {
   baseUrl: baseUrl,
+  hostUrl: hostUrl,
+  aiAvatar: aiAvatar,
   gua_dict: gua_dict,
   number_dict: number_dict
 }

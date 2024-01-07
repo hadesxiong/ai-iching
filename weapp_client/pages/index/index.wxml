@@ -31,19 +31,73 @@
         </view>
         <view class="mlmr_48 mb_60 d_f ai_c fd_c gap_24">
           <view class="d_f gap_24 wp_100">
-            <input type="text" class="b2_solid h_100 lh_100 br_16 fg_1 font_32 plpr_24" always-embed="{{true}}" bindinput="liuyaoInput" bindconfirm="liuyaoInput"></input>
-            <van-button color="#03A4FF" type="primary" open-type="chooseAvatar" custom-style="height:100rpx;border-radius:16rpx;font-size:32rpx" bind:click="liuyaoAsk" bind:chooseavatar="userInfo">卜爻</van-button>
+            <input type="text" class="b2_solid h_100 lh_100 br_16 fg_1 font_32 plpr_24" always-embed="{{true}}" value="{{ly_input}}" bindinput="liuyaoInput" bindconfirm="liuyaoInput"
+            placeholder="请输入需要预测的事(6个字以上)"></input>
+            <van-button wx:if="{{has_avatar}}" color="#03A4FF" type="primary" custom-style="height:100rpx;border-radius:16rpx;font-size:32rpx" bind:click="liuyaoAsk">卜爻</van-button>
+            <van-button wx:else="{{has_avatar}}" color="#03A4FF" type="primary" open-type="chooseAvatar" custom-style="height:100rpx;border-radius:16rpx;font-size:32rpx" bind:click="liuyaoAsk" bind:chooseavatar="chooseAvatar">卜爻</van-button>
           </view>
           <view class="d_f gap_96">
             <view class="font_32 fc_brand" bind:tap="showLym">返回上页</view>
             <view class="font_32 fc_brand">历史记录</view>
           </view>
+          <van-toast id='inputMsg'></van-toast>
+          <van-toast id='confirmLoading'></van-toast>
         </view>
       </view>
     </van-popup>
     <van-popup show="{{lyd_visible}}" round position="bottom" custom-style="height:75%" overlay="{{false}}">
       <view class="d_f fd_c jc_sb wp_100 hp_100 gap_24">
-        <scroll-view class="fg_1"></scroll-view>
+        <scroll-view type="list" scroll-y class="fg_1 mt_64 d_f fd_c ofy_s">
+          <view class="d_f ai_s gap_24 jc_e ml_32 mr_32" id="user_question">
+            <view class="bg_chat p_24 w_454 br_8 lh_40 font_32">
+              {{ly_ques}}
+            </view>
+            <view class="br_36">
+              <image wx:if="{{lyd_visible}}" src="{{hostUrl+avatar}}" mode="scaleToFill" class="w_72 h_72 br_36"/>
+            </view>
+          </view>
+          <view class="d_f ai_s gap_24 jc_s ml_32 mr_32 mt_24" id="first_yao">
+            <view class="br_36">
+              <image wx:if="{{lyd_visible}}" src="{{aiAvatar}}" mode="scaleToFill" class="w_72 h_72 br_36"/>
+            </view>
+            <view class="bg_chat p_24 w_454 br_8 lh_40 font_32">
+                <text>{{yao_msg[0]+';'}}<br/>
+                {{yao_msg[1]+';'}}<br/>
+                {{yao_msg[2]+';'}}<br/>
+                {{gua_msg[0]+';'}}</text>
+            </view>
+          </view>
+          <view class="d_f ai_s gap_24 jc_s ml_32 mr_32 mt_24" id="second_yao">
+            <view class="br_36">
+              <image wx:if="{{lyd_visible}}" src="{{}}" mode="scaleToFill" class="w_72 h_72 br_36"/>
+            </view>
+            <view class="bg_chat p_24 w_454 br_8 lh_40 font_32">
+                <text>{{yao_msg[3]+';'}}<br/>
+                {{yao_msg[4]+';'}}<br/>
+                {{yao_msg[5]+';'}}<br/>
+                {{gua_msg[1]+';'}}</text>
+            </view>
+          </view>
+          <view class="d_f ai_s gap_24 jc_s ml_32 mr_32 mt_24" id="gua_info">
+            <view class="br_36">
+              <image wx:if="{{lyd_visible}}" src="{{}}" mode="scaleToFill" class="w_72 h_72 br_36"/>
+            </view>
+            <view class="bg_chat p_24 w_454 br_8 lh_40 font_32">
+                <text>{{'六爻结果为:'+gua_res.gua_symbol+';'}}<br/>
+                {{'卦名:'+gua_res.gua_name+';'}}<br/>
+                {{gua_res.gua_desc+';'}}<br/>
+                {{'卦辞:'+gua_res.gua_sentence+';'}}</text>
+            </view>
+          </view>
+          <view class="d_f ai_s gap_24 jc_s ml_32 mr_32 mt_24 mb_24" id="gua_ans">
+            <view class="br_36">
+              <image wx:if="{{lyd_visible}}" src="{{}}" mode="scaleToFill" class="w_72 h_72 br_36"/>
+            </view>
+            <view class="bg_chat p_24 w_454 br_8 lh_40 font_32">
+              {{ly_ans}}
+            </view>
+          </view>
+        </scroll-view>
         <view class="d_f gap_48 wp_100 jc_c mb_24">
           <van-button plain color="#03A4FF" type="primary" custom-style="width:300rpx;height:100rpx;border-radius:16rpx;font-size:32rpx;" bind:click="returnHome">返回</van-button>
           <van-button color="#03A4FF" type="primary" custom-style="width:300rpx;height:100rpx;border-radius:16rpx;font-size:32rpx">分享</van-button>
