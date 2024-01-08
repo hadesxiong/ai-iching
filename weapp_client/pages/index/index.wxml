@@ -38,7 +38,7 @@
           </view>
           <view class="d_f gap_96">
             <view class="font_32 fc_brand" bind:tap="showLym">返回上页</view>
-            <view class="font_32 fc_brand">历史记录</view>
+            <view class="font_32 fc_brand" bind:tap="showLyh">历史记录</view>
           </view>
           <van-toast id='inputMsg'></van-toast>
           <van-toast id='confirmLoading'></van-toast>
@@ -100,8 +100,30 @@
         </scroll-view>
         <view class="d_f gap_48 wp_100 jc_c mb_24">
           <van-button plain color="#03A4FF" type="primary" custom-style="width:300rpx;height:100rpx;border-radius:16rpx;font-size:32rpx;" bind:click="returnHome">返回</van-button>
-          <van-button color="#03A4FF" type="primary" custom-style="width:300rpx;height:100rpx;border-radius:16rpx;font-size:32rpx">分享</van-button>
+          <van-button color="#03A4FF" type="primary" custom-style="width:300rpx;height:100rpx;border-radius:16rpx;font-size:32rpx" bind:click="showShareSheet">分享</van-button>
+          <van-share-sheet show="{{showShare}}" options="{{shareOptions}}" title="分享给好友" bind:close="showShareSheet"></van-share-sheet>
         </view>
+      </view>
+    </van-popup>
+    <van-popup show="{{lyh_visible}}" round position="bottom" custom-style="height:75%" overlay="{{false}}">
+      <view class="d_f fd_c jc_sb wp_100 hp_100 gap_24">
+        <view class="d_f fd_c jc_c ai_c mt_24 fg_1 maxhp_84">
+          <view class="font_40 fw_500 mt_24">卜卦记录</view>
+          <scroll-view type='list' scroll-y class='d_f fd_c ofy_s gap_24 mt_48' bindscrolltolower="getMoreLyh">
+            <view wx:for='{{lyh_list}}' wx:key="id" id="{{item.id}}" class='w_a ml_48 mr_48 d_f fd_c gap_12 mb_24' bind:tap="getGuaDetail">
+              <view class="font_32 fw_500">"{{item.user_ques}}"</view>
+              <view class="font_28 fc_l3">{{item.gua_time}}</view>
+              <view class="font_28 fc_l3">卦象:{{item.user_gua}},卦名:{{item.gua_name}}</view>
+              <view class="font_28 fc_l3">卦辞:{{item.gua_desc}}</view>
+            </view>
+          </scroll-view>
+        </view>
+        <view class="d_f gap_48 wp_100 jc_c mb_24">
+          <van-button plain color="#03A4FF" type="primary" custom-style="width:300rpx;height:100rpx;border-radius:16rpx;font-size:32rpx;" bind:click="returnHome">返回</van-button>
+        </view>
+        <van-toast id="loadingMoreLyh"></van-toast>
+        <van-toast id="loadingLyDetail"></van-toast>
+        <van-dialog id="lyDetail" show="{{lydetail_visible}}" bind:close="hideGuaDetail"></van-dialog>
       </view>
     </van-popup>
   </view>

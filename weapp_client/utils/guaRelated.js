@@ -59,11 +59,24 @@ const getGuaAns = function(openid,yao,gua,ques) {
   )
 }
 
+// 获取历史卜卦记录
+const getGuaRec = function(openid,args) {
+  const req_url = baseUrl + '/api/liuyao/getGuaRec';
+  const req_data = args;
+  const req_headers = {Userid:openid};
+  return requestSync(req_url,req_data,req_headers,'GET').then(
+    (res)=>{return res;}
+  ).catch(
+    (error)=>{throw error;}
+  )
+}
+
 module.exports = {
   getCoins: getCoins,
   formatCoins: formatCoins,
   formatMsg: formatMsg,
   getYaos: getYaos,
   getGuaRes: getGuaRes,
-  getGuaAns: getGuaAns
+  getGuaAns: getGuaAns,
+  getGuaRec: getGuaRec
 }

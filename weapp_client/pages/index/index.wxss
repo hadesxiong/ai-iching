@@ -51,6 +51,9 @@ page {
 .minh_1456 {
   min-height: 1256rpx;
 }
+.maxhp_84 {
+  max-height: 84%;
+}
 .w_180 {
   width: 180rpx;
 }
@@ -66,6 +69,12 @@ page {
 }
 .d_n {
   display: none;
+}
+.gap_8 {
+  gap: 8rpx;
+}
+.gap_12 {
+  gap: 12rpx;
 }
 .gap_24 {
   gap: 24rpx;
@@ -134,11 +143,17 @@ page {
 .ml_32 {
   margin-left: 32rpx;
 }
+.ml_48 {
+  margin-left: 48rpx;
+}
 .mr_24 {
   margin-right: 24rpx;
 }
 .mr_32 {
   margin-right: 32rpx;
+}
+.mr_48 {
+  margin-right: 48rpx;
 }
 .p_16 {
   padding: 16rpx;

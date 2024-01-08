@@ -3,6 +3,8 @@
     "van-transition": "@vant/weapp/transition/index",
     "van-popup": "@vant/weapp/popup/index",
     "van-button": "@vant/weapp/button/index",
-    "van-toast": "@vant/weapp/toast/index"
+    "van-toast": "@vant/weapp/toast/index",
+    "van-share-sheet": "@vant/weapp/share-sheet/index",
+    "van-dialog":"@vant/weapp/dialog/index"
   }
 }

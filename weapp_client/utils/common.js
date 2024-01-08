@@ -3,6 +3,8 @@
 
 // 引入toast方法
 import Toast from '@vant/weapp/toast/toast';
+// 引入dialog方法
+import Dialog from '@vant/weapp/dialog/dialog';
 
 const requestSync = function(_url,_data,_header={},_method,_callcomplete) {
   return new Promise(function(resolve,reject){
@@ -57,9 +59,18 @@ const toastClear = function(id) {
   })
 }
 
+const showDialog = function(user_ques,gua_ans,selector) {
+  Dialog.alert({
+    title:user_ques,
+    message: gua_ans,
+    selector:selector
+  })
+}
+
 module.exports = {
   requestSync: requestSync,
   toastFail: toastFail,
   toastLoading: toastLoading,
-  toastClear: toastClear
+  toastClear: toastClear,
+  showDialog: showDialog
 }
