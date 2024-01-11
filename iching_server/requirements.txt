@@ -12,10 +12,10 @@ cryptography==41.0.7
 Django==4.2.7
 django-compat==1.0.15
 django-cors-headers==4.3.1
-django-crontab==0.7.1
 djangorestframework==3.14.0
 idna==3.6
 kombu==5.3.4
+pillow==10.2.0
 prompt-toolkit==3.0.41
 psycopg2-binary==2.9.9
 pycparser==2.21
@@ -27,5 +27,6 @@ six==1.16.0
 sqlparse==0.4.4
 tzdata==2023.3
 urllib3==2.1.0
+uWSGI==2.0.23
 vine==5.1.0
 wcwidth==0.2.12

@@ -7,5 +7,6 @@
     "navigationStyle": "custom"
   },
   "renderer": "webview",
+  "lazyCodeLoading": "requiredComponents",
   "sitemapLocation": "sitemap.json"
 }

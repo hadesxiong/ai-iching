@@ -109,7 +109,7 @@
       <view class="d_f fd_c jc_sb wp_100 hp_100 gap_24">
         <view class="d_f fd_c jc_c ai_c mt_24 fg_1 maxhp_84">
           <view class="font_40 fw_500 mt_24">卜卦记录</view>
-          <scroll-view type='list' scroll-y class='d_f fd_c ofy_s gap_24 mt_48' bindscrolltolower="getMoreLyh">
+          <scroll-view type='list' scroll-y class='d_f fd_c ofy_s gap_24 mt_48 fg_1' bindscrolltolower="getMoreLyh">
             <view wx:for='{{lyh_list}}' wx:key="id" id="{{item.id}}" class='w_a ml_48 mr_48 d_f fd_c gap_12 mb_24' bind:tap="getGuaDetail">
               <view class="font_32 fw_500">"{{item.user_ques}}"</view>
               <view class="font_28 fc_l3">{{item.gua_time}}</view>
