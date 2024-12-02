@@ -3,7 +3,8 @@
   "projectname": "weapp_client",
   "setting": {
     "compileHotReLoad": true,
-    "skylineRenderEnable": true
+    "skylineRenderEnable": true,
+    "urlCheck": false
   },
   "libVersion": "development"
 }
